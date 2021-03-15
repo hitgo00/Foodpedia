@@ -1,12 +1,17 @@
-import logo from './logo.svg';
+import { Router } from '@reach/router';
 import './App.css';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       Foodpedia
-      </header>
+     <Router primary={false}>
+          <HomePage path="/" />
+          <SearchPage path="/search" />
+          <ProfilePage path="/profile" />
+        </Router>
     </div>
   );
 }
