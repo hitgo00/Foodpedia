@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.card-container {
+  max-width: 450px;
+  margin-left: 430px;
+  margin-top: 20px;
+}
+
+.card-title {
+  margin: 0.5rem;
+  margin-top: 0;
+}
+.card-body {
+  margin: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.card-body {
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+ul {
+  margin-top: 0;
+}
+
+:root {
+  --primary: #0000ff;
+  --white: #fdfdfd;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.btn--primary--solid {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  outline: none;
+}
+
+.btn--primary--solid:hover {
+  background-color: black;
+  transform: translateY(-2px);
+}
+
+.btn--medium {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn--large {
+  padding: 15px 30px;
+  font-size: 20px;
+}
