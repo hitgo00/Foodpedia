@@ -1,5 +1,7 @@
 Foodpedia Client
 
+Foodpedia Server [repository](https://github.com/hitgo00/Foodpedia-server).
+
 ## Available Scripts
 
 In the project directory, you can run:
