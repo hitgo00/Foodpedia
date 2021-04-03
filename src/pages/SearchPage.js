@@ -1,4 +1,16 @@
-export default function SearchPage (){
+import Search from "../components/search";
 
-    return <div>This is search page!</div>
+export default function SearchPage() {
+  return (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Search />
+    </div>
+  );
 }
