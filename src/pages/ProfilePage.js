@@ -1,4 +1,16 @@
-export default function ProfilePage (){
+import Card from "../components/card";
 
-    return <div>This is profile page!</div>
+export default function ProfilePage() {
+  return (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Card />
+    </div>
+  );
 }
