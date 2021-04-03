@@ -1,4 +1,11 @@
-export default function HomePage (){
+import React, { Component } from "react";
+import "./home.css";
 
-    return <div>This is home page, will be completed by harsh!</div>
+import index from "../index.png";
+export default function HomePage() {
+  return (
+    <div align="centre">
+      <img src={index} class="center"></img>
+    </div>
+  );
 }
