@@ -10,7 +10,7 @@ const pages = [
     link: "/",
   },
   {
-    label: "Prfile",
+    label: "Profile",
     link: "/profile",
   },
 ];
