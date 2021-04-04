@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .card-container {
-  max-width: 450px;
-  margin-left: 430px;
-  margin-top: 20px;
+  max-width: auto;
+  margin-left: auto;
+  margin-top: auto;
 }
 
 .card-title {
