@@ -1,4 +1,4 @@
-import Card from "../components/card";
+import Foodprofile from "../components/foodprofile";
 
 export default function ProfilePage() {
   return (
@@ -7,10 +7,10 @@ export default function ProfilePage() {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "auto",
       }}
     >
-      <Card />
+      <Foodprofile />
     </div>
   );
 }
