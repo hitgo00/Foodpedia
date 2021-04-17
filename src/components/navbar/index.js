@@ -17,20 +17,21 @@ const pages = [
 
 function Navbar() {
   return (
-    <div
-      style={{
+    <div style={{
         width: "100%",
-        background: "#0D56FE",
+        backgroundColor:"blue",
+        opacity:"1",
         height: "3rem",
         color: "white",
+        position:"sticky",
+        top:"0px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-      }}
-    >
+    }}>
       {pages.map((page) => (
         <Link to={page.link} key={page.label}>
-          <div style={{ padding: "8px" }}> {page.label}</div>
+          <div style={{padding:"8px"}}> {page.label}</div>
         </Link>
       ))}
     </div>
@@ -38,3 +39,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
