@@ -7,41 +7,131 @@
   }
 
 /*----- Header ---------*/
-  .banner{
-    width:100%;
-    height:600px;
-    box-sizing:content-box;
-    background-position:center ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../images/Header.jpg');
-  }
+.super {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Lato';
+  position: relative;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+}
 
-  .login{
-    position:absolute;
-    top:55%;
-    right:19%;
-  }
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+}
 
-  .title{
-    position:relative;
-    color:white;
-  }
+.social-media,.banner-text a {
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .5s;
+}
 
-  .title h3{
-    position:absolute;
-    top:125px;
-    right:15%;
-    font-size:60px;
-  }
 
-  .title h4{
-    position:absolute;
-    font-weight: 500;
-    right:13%;
-    top:230px;
-    font-size:30px;
-  }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+}
+
+.bg {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 1;
+}
+
+.banner {
+  display: flex;
+  position: relative;
+  top:140px;
+  padding-left: 100px;
+  padding-right: 30px;
+  align-items: center;
+}
+
+.banner-img img{
+  position: absolute;
+  top:11px;
+  right:43px;
+  z-index: 2;
+  width:470px;
+  height:470px;
+}
+
+.banner-text h1 {
+  font-size: 65px;
+  font-family: "Rancho";
+  margin-bottom: 30px;
+}
+
+.banner-text p {
+  line-height: 1.7;
+  width:45vw;
+  font-weight: 500 !important;
+}
+
+.banner-text .btn {
+  margin-left: -3px;
+  padding: 12px 40px;
+  background-color: #FFB633;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.banner-text .login{
+  font-size: 18px !important;
+  border-radius: 50px !important;
+  padding-left:5px !important;
+  padding-right: 4px !important;
+}
+
+.social-media {
+  position: absolute;
+  text-align: center;
+  left: 60px;
+  bottom: 116px;
+}
+
+.social-media ul {
+  display: flex;
+}
+
+.social-media ul li {
+  text-align: center;
+  margin-right: 35px;
+}
+
+.social-media ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px solid black;
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+  color: #000;
+}
+
+.social-media ul li a .icon{
+  font-size: 20px;
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.social-media ul li a:hover{
+  font-size: 24px;
+  background-color:#FFB633;
+  color: #fff;
+  border:none;
+}
 
   /* --------- Products ---------  */
   
@@ -49,7 +139,7 @@
   text-align: center;
   font-size: 26px;
   font-family: 'Courier New';
-  margin-top: 5rem;
+  margin-top: 12rem;
   margin-bottom: 5rem;
 }
 
@@ -60,7 +150,7 @@
 /* -------- About ------- */
 
 #about{
-background-color:lightgoldenrodyellow;
+/* background-color:lightgoldenrodyellow; */
 margin-top:10px ;
 width:100%;
 box-sizing: border-box;
@@ -72,6 +162,8 @@ position: relative;
 }
 
 .about-text{
+  display:flex;
+  align-items: center;
   position:relative;
   top:-60px;
   width: 45%;
@@ -80,20 +172,37 @@ position: relative;
 }
 .about-text h1{
 font-size: 3.5rem;
-text-align: center;
-color:#3d2514;
-margin-bottom:20px;
-font-weight: 500;
-padding: 0px;
 font-family:sans-serif;
+color:#82498C;
+text-align: center;
+font-weight: 800;
+position:absolute;
+top:-200px;
+z-index: -1;
+left:200px;
 }
+
+.about-text .about2 img{
+  position: absolute;
+  top:-200px;
+  left:-100px;
+  width:600px;
+  height:600px;
+  opacity: 0.25;
+}
+
 .about-text p{
-  font-family:sans-serif;
-  font-weight: 200;
+  position: absolute;
+  top:-20px;
+  left:40px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: normal;
   color: black;
 }
 
 .about-image{
+  z-index: -1;
   margin-right: 0;
   display: flex;
   align-items:flex-end;
@@ -161,3 +270,4 @@ width: 500px;
       width:90%;
   }
 }
+
