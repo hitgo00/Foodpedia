@@ -1,17 +1,23 @@
 import React from 'react'
-import Card from "../components/card";
+// import Card from "../card"
 import {Container,Grid} from "@material-ui/core";
-
-import './home.css';
+import Card from "../Card_home";
+import '../home.css';
 
 const Product = function Product() {
     return (
         <div id="products">
             <h1>Choose And Enjoy</h1>
             <p>Add your Text here</p>
-            <Container>
-                <Grid justifyContent="left" alignItems="center" container>
+            <Container style={{marginLeft:"190px"}}>
+                <Grid container spacing={3}>
                     <Grid item>
+                        <Card/>
+                    </Grid>
+                    <Grid item>
+                        <Card/>
+                    </Grid>
+                    <Grid item >
                         <Card/>
                     </Grid>
                 </Grid>

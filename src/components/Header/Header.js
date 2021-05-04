@@ -1,8 +1,8 @@
 import React from 'react'
 import { GoogleLogin } from "react-google-login";
-import index from "../images/banner.png";
-import bg from "../images/bg.png"
-import './home.css'
+import index from "../../images/banner.png";
+import bg from "../../images/bg.png"
+import '../home.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGithubAlt,faFacebook,faTwitter} from '@fortawesome/free-brands-svg-icons';
 

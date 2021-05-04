@@ -1,8 +1,8 @@
 import React from "react";
-import Header from './Header';
-import Contact from './Contact';
-import Product from './Product';
-import About from './About';
+import Header from '../Header/Header';
+import Contact from '../Contact/Contact';
+import Product from '../Product/Product';
+import About from '../About/About';
 
 export default function HomePage() {
   return (

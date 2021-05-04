@@ -18,6 +18,7 @@ const pages = [
 function Navbar() {
   return (
     <div style={{
+        zIndex:"100",
         width: "100%",
         backgroundColor:"blue",
         opacity:"1",

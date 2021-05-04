@@ -1,6 +1,6 @@
 import React from 'react';
-import img from "../images/about.png";
-import img2 from "../images/about2.png";
+import img from "../../images/about.png";
+import img2 from "../../images/about2.png";
 export default function About() {
     return (
         <div id="about">
