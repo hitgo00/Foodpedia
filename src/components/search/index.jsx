@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from 'react';
-//import React, { Component } from "react";
+import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
-import { debounce } from "lodash";
-import Card from "../card/index"
+import RecipeReviewCard from "./card.js"
+import pic1 from "./dem1.png"
+import pic2 from './dem2.png'
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -16,26 +18,30 @@ const useStyles = makeStyles({
     padding: '0 30px',
 
   },
-  
+ 
 });
 
-function App(props) {
+
+function App() {
     const classes = useStyles();
     const formData = new FormData();
+    
     // Initially, no file is selected
     //selfile: null
     const [fin, setFin] = useState([]);
     const[selfile,setSelfile]=useState(null);
     const[str, setStr]=useState("");
+
+  
+    //text_search
     const text_search = debounce((query) => {
-    //    var aks=[];
-    console.log(query);
+
     const request = require("request");
     request.get(
       {
         url: "https://api.calorieninjas.com/v1/nutrition?query=" + query,
         headers: {
-          "X-Api-Key": "IvocvEFKL6QxwxtZC1WPIT2AofJlV4JS3ctsE6Ng",
+          "X-Api-Key": "abP0Rcr8oo8uivQCa01/XQ==glWmr5wyMWy5Zsad",
         },
       },
 
@@ -48,9 +54,8 @@ function App(props) {
             body.toString("utf8")
           );
         else {
-          //         aks.push(body);
+         
           
-          console.log("hi");
           var obj = JSON.parse(body).items;
         
         
@@ -65,36 +70,47 @@ function App(props) {
             obj1["fibre"] = obj[i]["fiber_g"];
             obj1["prot"] = obj[i]["protein_g"];
             obj1["name"] = obj[i]["name"];
+            
             fin1.push(obj1);
           }
           if(fin1.length===0)
           {
-            alert("Invalid Input")
+             alert("Entered Text does not contain any food name");
+             window.location.reload();
           }
-          //console.log(this.state);
-          console.log(fin1);
+          
          // this.setState({ selfile: this.state.selfile, fin: fin1 });
           setFin(fin1);
+          if(fin1.length>0)
+          {
+            document.getElementById("ask").style.display="none";
+          }
         }
 
       }
     );
+    
+   
   },400);
 
  
+
  const onFileUpload = debounce(() => {
 
+  var elem=document.getElementById("load");
+    
+    elem.innerHTML="Loading...";
     
     formData.append(
       "image",
       selfile,
       selfile.name
     );
-    //console.log(selfile);
+
 
     const api =
       "https://api.logmeal.es/v2/recognition/dish/v0.8?skip_types=%5B1%2C3%5D&language=eng";
-    const token = "6cfc05f0d27d697db3b63d6101e799014323b586";
+    const token = "6dc73ae0e01c829ed1b284cf0f57caa77a92fe09";
 
   
 
@@ -106,7 +122,7 @@ function App(props) {
         },
       })
       .then((res) => {
-        //console.log(res);
+
         const filteredArray = res.data.recognition_results.filter((item) => {
           return item.prob >= 0.1;
         }) ;
@@ -116,7 +132,7 @@ function App(props) {
         for (i = 0; i < filteredArray.length; i++) {
           arr.push(filteredArray[i].name);
         }
-        // console.log(arr);
+    
         var s;
         if (arr.length === 1) {
           text_search(arr[0]);
@@ -126,7 +142,7 @@ function App(props) {
             s = s + " and " + arr[i];
           }
           s = s + " and " + arr[arr.length - 1];
-          // console.log(s);
+        
           text_search(s);
         }
       })
@@ -134,84 +150,90 @@ function App(props) {
       {
         if(error.response.status===400)
         {
-            //console.log("HI");
-            alert("File should be in jpg or jpeg format");
+            
+          alert("File should be in jpg or jpeg format")
+          window.location.reload();
+      
         }
         else if(error.response.status===413)
         {
-          alert("File size is greater than 1 MB");
+          
+           alert("File size is greater than 1 MB");
+           window.location.reload();
+
         }
       });
-     
+      
   },400);
 
   
   
     
     return (
-      
       <div>
+      
+     <div class="first"  id="ask">
         
         <div class="div1"></div>
-        <div class="bg-text">
+
+          <div class="box1">
+          "Nutrition is the only remedy that can bring full recovery and can be used with any treatment. Remember, food is our best medicine!"
+          </div>
+          <div class="box2">
+           - Bernard Jensen
+          </div>
+          <div class="box">
+          Know your food's nutritional values
+          </div>
+
+          <div class="bg-text">
         <h3>Image Search</h3>
-        <p class="image">(file size must be less than 1MB and it must be in jpg or jpeg format)</p>
+        <p >(file size must be less than 1MB and it must be in jpg or jpeg format)</p>
         <br/>
           <input type="file" onChange={(e)=>setSelfile(e.target.files[0])} />
-          <button  class="bt" onClick={onFileUpload} className={classes.root}>Upload!</button>
+          <button  class="bt" onClick={onFileUpload} className={classes.root} id="load">Upload!</button>
+          <br/>
           <h3>Text Search</h3>
-          <p class="image">(If you want to search multiple food items then add "and" between their names. e.g. banana and cava)</p>
           <br/>
           
           
-          {/* <form onSubmit={(e)=>text_search(str)}> */}
           <input
             type="text"
             placeholder="Enter your food name" 
             onChange={(event) => setStr(event.target.value)}
           />
-          <input type="button" value="Submit" onClick={(e)=>text_search(str)} />
-          {/* </form> */}
+          
+           <input type="button" id="load2" value="Submit" onClick={(e)=>{var elem=document.getElementById("load2");
+            elem.value="Loading...";
+            text_search(str);
+            
+          }}/> 
+          </div>
+
+
+
+          <div class="footer">
+
+          
+           <h3 class="head">Type anything you want.</h3>  <p>The  text search tool will detect food items from the text automatically and give their nutritional values.</p>
+            <br/>
+          <img src={pic1} alt="demo1" class="demo" />
+          <h3 class="head">Or Upload a photo</h3><p>The image search tool will detect food item from the image automatically and give nutritional values.</p>
+          <br/>
+          <img src={pic2} alt="demo2" class="demo" />
+
+
+
+          
+          </div>
          
-
-
-
-
-          
-          {console.log(str)}
-          
-         </div>
-        <br/><br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/><br/>
-        <br/>
-        <br/>
-        <br/>
+         
+       </div> 
         
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
-        <div  class="las">
-          {
-          fin.length > 0 && (<Card data={fin}/>)}
-         
-        </div>
-      </div>
+       
+          { fin.length>0 && < RecipeReviewCard data={fin}/>} 
+     
+   </div>
     );
   
 }
