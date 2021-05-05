@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //import React, { Component } from "react";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
-
+import { debounce } from "lodash";
 import Card from "../card/index"
 const useStyles = makeStyles({
   root: {
@@ -27,7 +27,7 @@ function App(props) {
     const [fin, setFin] = useState([]);
     const[selfile,setSelfile]=useState(null);
     const[str, setStr]=useState("");
-    const text_search = (query) => {
+    const text_search = debounce((query) => {
     //    var aks=[];
     console.log(query);
     const request = require("request");
@@ -79,10 +79,10 @@ function App(props) {
 
       }
     );
-  };
+  },400);
 
  
- const onFileUpload = () => {
+ const onFileUpload = debounce(() => {
 
     
     formData.append(
@@ -143,7 +143,7 @@ function App(props) {
         }
       });
      
-  };
+  },400);
 
   
   
