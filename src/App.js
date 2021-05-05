@@ -6,7 +6,18 @@ import SearchPage from "./pages/SearchPage";
 import ProfilePage from "./pages/ProfilePage";
 import Navbar from "./components/navbar";
 
+import { useUserState } from "./Context/UserContext";
+
 function App() {
+  const { isAuthenticated } = useUserState();
+  if (!isAuthenticated) {
+    return (
+      <div className="App">
+        <Navbar />
+        <HomePage />
+      </div>
+    );
+  }
   return (
     <div className="App">
       <Navbar />
