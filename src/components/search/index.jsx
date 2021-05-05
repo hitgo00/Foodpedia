@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from 'react';
-
+import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
 import RecipeReviewCard from "./card.js"
@@ -34,7 +34,7 @@ function App() {
 
   
     //text_search
-    const text_search = (query) => {
+    const text_search = debounce((query) => {
 
     const request = require("request");
     request.get(
@@ -91,11 +91,11 @@ function App() {
     );
     
    
-  };
+  },400);
 
  
 
- const onFileUpload = () => {
+ const onFileUpload = debounce(() => {
 
   var elem=document.getElementById("load");
             elem.value="Loading...";
@@ -164,7 +164,7 @@ function App() {
         }
       });
       
-  };
+  },400);
 
   
   
