@@ -1,141 +1,119 @@
 .div1{
 
-     background-image: url("priscilla-du-preez-9sgaZwWw-WA-unsplash.jpg"); 
+  background-image: url("priscilla-du-preez-9sgaZwWw-WA-unsplash.jpg"); 
 
-    background-repeat: no-repeat;
-    /* background-size:cover; */
-    background-size:cover;
-    display:inline-block;
-    position: absolute; 
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    filter: blur(2px);
-  /* -webkit-filter: blur(8px); */
-    height:100%;
-    overflow: hidden;
+ background-repeat: no-repeat;
+ /* background-size:cover; */
+ background-size:cover;
+ display:inline-block;
+ position: absolute; 
+ top: 0px;
+ right: 0px;
+ bottom: 0px;
+ left: 0px;
+ filter: blur(2px);
+/* -webkit-filter: blur(8px); */
+ height:100%;
+ overflow: hidden;
 }
 .head{
-    margin-top:auto;
-    padding-top:25px;
-    font-size:60px;
+ margin-top:auto;
+ padding-top:25px;
+ font-size:60px;
 }
 
-.text{
-    color:khaki;
-}
+
 
 .box {
-    
-    font-family:cursive;
-    color:black;
-    font-size:70px;
-    
-   
-    position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
-  }
+ 
+ font-family:cursive;
+ color:black;
+ font-size:70px;
+ 
+
+ position: absolute;
+ top: 110%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 2;
+ width: 100%;
+ padding: 20px;
+ text-align: center;
+ overflow: hidden;
+}
 .bg-text {
-    
-    background-color: rgba(0,0,0, 0.4); 
-    color:white;
-    font-weight: bold;
-    font-family:cursive;
-    border: 3px solid black;
-    position: absolute;
-    top: 160%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 50px;
-    text-align: center;
-    overflow: hidden;
-  }
  
-  .first{
-    min-height: 100%;
-  }
-  
-  
-  .footer{
-    color:white;
-     background-color:rgb(144, 150, 238);     
-    font-weight: bold;
-    font-family: cursive;
-    position:absolute;
-    font-size:larger;
-    top: 300%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
-  }
-  .demo{
-      width:300px;
-      border-radius:30%;
-  }
-  .end{
-   
-    display:inline-block;
-    position:absolute;
-    font-size:larger;
-    top: 360%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    padding:300px;
-    text-align: center;
-    overflow: hidden;
+ background-color: rgba(0,0,0, 0.4); 
+ color:white;
+ font-weight: bold;
+ font-family:cursive;
+ border: 3px solid black;
+ position: absolute;
+ top: 160%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 2;
+ width: 80%;
+ padding: 50px;
+ text-align: center;
+ overflow: hidden;
+}
+
+.first{
+ min-height: 100%;
+}
+
+
+.footer{
+ color:white;
+  background-color:rgb(144, 150, 238);     
+ font-weight: bold;
+ font-family: cursive;
+ position:absolute;
+ font-size:larger;
+ top: 300%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 2;
+ width: 100%;
+ padding: 20px;
+ text-align: center;
+ overflow: hidden;
+}
+.demo{
+   width:300px;
+   border-radius:30%;
+}
+.box1{
+ font-family:cursive;
+ color:white;
+ font-size:35px;
  
-  }
-  .demo1{
-    border-radius:50%;
-    width:300px;
 
-  }
-  .box1{
-    font-family:cursive;
-    color:white;
-    font-size:35px;
-    
-   
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
-  }
+ position: absolute;
+ top: 40%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 2;
+ width: 100%;
+ padding: 20px;
+ text-align: center;
+ overflow: hidden;
+}
 
-  .box2{
-    font-family:cursive;
-    color:white;
-    font-size:35px;
-    
-   
-    position: absolute;
-    top: 60%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
-  }
+.box2{
+ font-family:cursive;
+ color:white;
+ font-size:35px;
+ 
+
+ position: absolute;
+ top: 60%;
+ left:50%;
+ transform: translate(-50%, -50%);
+ z-index: 2;
+ width: 100%;
+ padding: 20px;
+ text-align: center;
+ overflow: hidden;
+}
