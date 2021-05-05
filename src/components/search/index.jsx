@@ -4,8 +4,8 @@ import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
 import RecipeReviewCard from "./card.js"
-import pic1 from "./dem1.png"
-import pic2 from './dem2.png'
+// import pic1 from "./dem1.png"
+// import pic2 from './dem2.png'
 
 const useStyles = makeStyles({
   root: {
@@ -218,10 +218,10 @@ function App() {
           
            <h3 class="head">Type anything you want.</h3>  <p>The  text search tool will detect food items from the text automatically and give their nutritional values.</p>
             <br/>
-          <img src={pic1} alt="demo1" class="demo" />
+          {/* <img src={pic1} alt="demo1" class="demo" /> */}
           <h3 class="head">Or Upload a photo</h3><p>The image search tool will detect food item from the image automatically and give nutritional values.</p>
           <br/>
-          <img src={pic2} alt="demo2" class="demo" />
+          {/* <img src={pic2} alt="demo2" class="demo" /> */}
 
 
 
