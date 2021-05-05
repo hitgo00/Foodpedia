@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
-import Card from "./card.js"
+import RecipeReviewCard from "./card.js"
 import pic1 from "./dem1.png"
 import pic2 from './dem2.png'
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 });
 
 
-function App() {
+function App(props) {
     const classes = useStyles();
     const formData = new FormData();
     
@@ -232,7 +232,7 @@ function App() {
        </div> 
         
        
-          { fin.length>0 && <Card data={fin}/>} 
+          { fin.length>0 && < RecipeReviewCard data={fin}/>} 
      
    </>
     );
