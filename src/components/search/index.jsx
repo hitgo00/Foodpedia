@@ -4,8 +4,8 @@ import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from "../card/index"
-import pic1 from "../../images/demo.png"
-import pic2 from "../../images/demo2.png"  
+import pic1 from "./demo.png"
+import pic2 from "./demo2.png"  
 
 const useStyles = makeStyles({
   root: {
