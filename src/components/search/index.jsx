@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
-import RecipeReviewCard from "./card.js"
+import RecipeReviewCard from "../card/index"
 import pic1 from "./dem1.png"
 import pic2 from './dem2.png'
 
