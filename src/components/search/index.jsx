@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { debounce } from "lodash";
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
-import Card from "../card/index"
-import pic1 from "./demo.png"
-import pic2 from "./demo2.png"  
+import Card from "./card.js"
+import pic1 from "./dem1.png"
+import pic2 from './dem2.png'
 
 const useStyles = makeStyles({
   root: {
