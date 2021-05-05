@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from 'react';
-import { debounce } from "lodash";
+
 import "./search.css";
 import { makeStyles } from '@material-ui/core/styles';
 import RecipeReviewCard from "./card.js"
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 });
 
 
-function App(props) {
+function App() {
     const classes = useStyles();
     const formData = new FormData();
     
@@ -34,7 +34,7 @@ function App(props) {
 
   
     //text_search
-    const text_search = debounce((query) => {
+    const text_search = (query) => {
 
     const request = require("request");
     request.get(
@@ -91,11 +91,11 @@ function App(props) {
     );
     
    
-  },400);
+  };
 
  
 
- const onFileUpload = debounce(() => {
+ const onFileUpload = () => {
 
   var elem=document.getElementById("load");
             elem.value="Loading...";
@@ -164,7 +164,7 @@ function App(props) {
         }
       });
       
-  },400);
+  };
 
   
   
