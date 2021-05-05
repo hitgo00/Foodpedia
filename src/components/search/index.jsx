@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 });
 
 
-function App(props) {
+function App() {
     const classes = useStyles();
     const formData = new FormData();
     
