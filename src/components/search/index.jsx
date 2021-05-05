@@ -76,7 +76,7 @@ function App() {
           if(fin1.length===0)
           {
              alert("Entered Text does not contain any food name");
-            //  window.location.reload();
+             window.location.reload();
           }
           
          // this.setState({ selfile: this.state.selfile, fin: fin1 });
@@ -98,8 +98,8 @@ function App() {
  const onFileUpload = debounce(() => {
 
   var elem=document.getElementById("load");
-            elem.value="Loading...";
-            elem.innerHTML="Loading...";
+    
+    elem.innerHTML="Loading...";
     
     formData.append(
       "image",
@@ -152,14 +152,14 @@ function App() {
         {
             
           alert("File should be in jpg or jpeg format")
-          // window.location.reload();
+          window.location.reload();
       
         }
         else if(error.response.status===413)
         {
           
            alert("File size is greater than 1 MB");
-          //  window.location.reload();
+           window.location.reload();
 
         }
       });
@@ -205,7 +205,6 @@ function App() {
           
            <input type="button" id="load2" value="Submit" onClick={(e)=>{var elem=document.getElementById("load2");
             elem.value="Loading...";
-            elem.innerHTML="Loading...";
             text_search(str);
             
           }}/> 
