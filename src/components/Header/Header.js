@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
+import { Link } from "@reach/router";
 import index from "../../images/banner.png";
 import bg from "../../images/bg.png";
 import "../home.css";
@@ -10,13 +11,19 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { loginUser, useUserDispatch } from "../../Context/UserContext";
+import {
+  loginUser,
+  useUserDispatch,
+  useUserState,
+} from "../../Context/UserContext";
 
 const Header = function Header() {
   const userDispatch = useUserDispatch();
   const responseGoogle = (response) => {
     loginUser(userDispatch, undefined, response);
   };
+
+  const { isAuthenticated } = useUserState();
 
   return (
     <div className="super">
@@ -31,26 +38,28 @@ const Header = function Header() {
             minima excepturi sint libero temporibus numquam aspernatur deleniti
             quia. Voluptas architecto incidunt, quaerat dolorum vel.
           </p>
-          <a href="/search" class="btn">
+          <Link to="/search" class="btn">
             Search Food{" "}
-          </a>
-          <GoogleLogin
-            className="login"
-            clientId="638324418102-ph6j8qqubi8tpl1l8drhfb9mqrrrvd8k.apps.googleusercontent.com"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-          />
+          </Link>
+          {!isAuthenticated && (
+            <GoogleLogin
+              className="login"
+              clientId="638324418102-ph6j8qqubi8tpl1l8drhfb9mqrrrvd8k.apps.googleusercontent.com"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            />
+          )}
         </div>
         <div className="banner-img">
           <img src={index} alt="logo" />
         </div>
       </div>
 
-      <div className="social-media">
+      {/* <div className="social-media">
         <ul>
           <li>
             <a href="#">
-              <FontAwesomeIcon className="icon" icon={faTwitter} />
+              <FontAwesomeIcon width={"24px"} className="icon" icon={faTwitter} />
             </a>
           </li>
           <li>
@@ -64,7 +73,7 @@ const Header = function Header() {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="bg">
         <img src={bg} alt="" />
       </div>

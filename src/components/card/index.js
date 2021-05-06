@@ -62,7 +62,7 @@ export const Button = ({
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  // console.log(props);
+  console.log(props);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -78,8 +78,6 @@ export default function RecipeReviewCard(props) {
           return (
             <CardContent>
               <div className="card-title">
-              
-      
                 <Typography variant="h5">{item.name}</Typography>
               </div>
               <Typography variant="body1" component="p">
@@ -119,16 +117,18 @@ export default function RecipeReviewCard(props) {
                 </Typography>
               </Collapse>
               <div className="btn">
-                <Button
-                  onClick={() => {
-                    console.log("You clicked!");
-                  }}
-                  type="button"
-                  buttonStyle="btn--primary--solid"
-                  buttonSize="btn--medium"
-                >
-                  Add Item
-                </Button>
+                {props.addItem && (
+                  <Button
+                    onClick={() => {
+                      console.log("You clicked!");
+                    }}
+                    type="button"
+                    buttonStyle="btn--primary--solid"
+                    buttonSize="btn--medium"
+                  >
+                    Add Item
+                  </Button>
+                )}
                 <Button
                   onClick={() => {
                     console.log("You clicked!");
