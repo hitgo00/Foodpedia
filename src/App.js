@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./pages/Homepage/HomePage";
 import SearchPage from "./pages/SearchPage";
 import ProfilePage from "./pages/ProfilePage";
+import FoodItemPage from "./pages/FoodItemPage";
 import Navbar from "./components/navbar";
 
 import { useUserState } from "./Context/UserContext";
@@ -17,6 +18,7 @@ function App() {
         <Router primary={false}>
           <HomePage path="/" />
           <SearchPage path="/search" />
+          <FoodItemPage path="/foodItem/:foodName" />
         </Router>
       </div>
     );
@@ -28,6 +30,7 @@ function App() {
         <HomePage path="/" />
         <SearchPage path="/search" />
         <ProfilePage path="/profile" />
+        <FoodItemPage path="/foodItem/:foodName" />
       </Router>
     </div>
   );
