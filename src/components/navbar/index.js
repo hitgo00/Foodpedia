@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import FastfoodIcon from '@material-ui/icons/Fastfood';
+import FastfoodIcon from "@material-ui/icons/Fastfood";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { GoogleLogout } from "react-google-login";
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Navbar() {
+function Navbar(props) {
   var userDispatch = useUserDispatch();
   const { isAuthenticated } = useUserState();
   const classes = useStyles();
@@ -118,9 +118,9 @@ function Navbar() {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>
-                <Link to="/profile">Profile</Link>
-              </MenuItem>
+              <Link to="/profile">
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+              </Link>
               <MenuItem onClick={handleClose}>
                 <GoogleLogout
                   clientId={
@@ -128,8 +128,7 @@ function Navbar() {
                   }
                   buttonText="Logout"
                   onLogoutSuccess={() => {
-                    signOut(userDispatch);
-                    window.location.replace('/')
+                    signOut(userDispatch, props.history);
                   }}
                 />
               </MenuItem>

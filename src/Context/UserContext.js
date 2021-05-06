@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate} from "@reach/router";
 
 var UserStateContext = React.createContext();
 var UserDispatchContext = React.createContext();
@@ -65,6 +66,9 @@ async function loginUser(dispatch, history, response) {
 
 function signOut(dispatch, history) {
   localStorage.removeItem("auth_token");
+  localStorage.removeItem("email");
+  localStorage.removeItem("name");
+  localStorage.removeItem("picture");
   dispatch({ type: "SIGN_OUT_SUCCESS" });
-  history.push("/login");
+  navigate("/");
 }

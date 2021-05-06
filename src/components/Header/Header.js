@@ -1,16 +1,14 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { Link } from "@reach/router";
-import index from "../../images/banner.png";
-import bg from "../../images/bg.png";
 import "../home.css";
 import HeroSVG from "../svgs/Hero";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithubAlt,
-  faFacebook,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faGithubAlt,
+//   faFacebook,
+//   faTwitter,
+// } from "@fortawesome/free-brands-svg-icons";
 
 import {
   loginUser,
