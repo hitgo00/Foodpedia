@@ -24,13 +24,12 @@ const Header = function Header() {
         <div className="banner-text">
           <h1>
             {" "}
-            We're always in the <br /> mood for food
+            Eat Good <br />Feel Good.
           </h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi ab
-            minima excepturi sint libero temporibus numquam aspernatur deleniti
-            quia. Voluptas architecto incidunt, quaerat dolorum vel.
+            Track your calories with text search or image search.
           </p>
+          
           <a href="/search" class="btn">
             Search Food{" "}
           </a>
@@ -48,6 +47,7 @@ const Header = function Header() {
 
       <div className="social-media">
         <ul>
+        
           <li>
             <a href="#">
               <FontAwesomeIcon className="icon" icon={faTwitter} />
@@ -63,6 +63,7 @@ const Header = function Header() {
               <FontAwesomeIcon className="icon" icon={faGithubAlt} />
             </a>
           </li>
+         
         </ul>
       </div>
       <div className="bg">
