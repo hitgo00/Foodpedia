@@ -4,6 +4,7 @@ import { Link } from "@reach/router";
 import index from "../../images/banner.png";
 import bg from "../../images/bg.png";
 import "../home.css";
+import HeroSVG from "../svgs/Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithubAlt,
@@ -50,8 +51,8 @@ const Header = function Header() {
             />
           )}
         </div>
-        <div className="banner-img">
-          <img src={index} alt="logo" />
+        <div>
+          <HeroSVG width={"40rem"} />
         </div>
       </div>
 
@@ -74,9 +75,6 @@ const Header = function Header() {
           </li>
         </ul>
       </div> */}
-      <div className="bg">
-        <img src={bg} alt="" />
-      </div>
     </div>
   );
 };

@@ -9,7 +9,14 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
 import "./card.css";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,17 +69,36 @@ export const Button = ({
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  console.log(props);
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   return (
     <div className="card-container">
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="info">
+          Share url copied to clipboard!
+        </Alert>
+      </Snackbar>
       <Card className={classes.root}>
         <CardMedia
           className={classes.media}
-          image="https://ardo.com/files/attachments/.18687/w1200h630zcCq85_PAELLA_ROYAL_207.jpg"
+          image="https://res.cloudinary.com/dt7hy0a3q/image/upload/v1620291345/healthy-food-illustration1_j5ieky.jpg"
         />
         {props.data.map((item, indx) => {
           return (
@@ -82,12 +108,7 @@ export default function RecipeReviewCard(props) {
               </div>
               <Typography variant="body1" component="p">
                 <div className="card-body">
-                  {" "}
-                  Paella is a Spanish rice dish originally from Valencia. Paella
-                  is one of the best-known dishes in Spanish cuisine. For this
-                  reason, many non-Spaniards view it as Spain's national dish,
-                  but Spaniards almost unanimously consider it to be a dish from
-                  the Valencian region.{" "}
+                  All the below values are for a 100gm serving size.
                 </div>
               </Typography>
               <CardActions disableSpacing>
@@ -105,7 +126,12 @@ export default function RecipeReviewCard(props) {
                   <ExpandMoreIcon />
                 </IconButton>
               </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
+              <Collapse
+                style={{ paddingBottom: "1rem" }}
+                in={expanded}
+                timeout="auto"
+                unmountOnExit
+              >
                 <Typography variant="body1">
                   <ul>
                     <li>Fat:{item.fat}g</li>
@@ -131,7 +157,15 @@ export default function RecipeReviewCard(props) {
                 )}
                 <Button
                   onClick={() => {
-                    console.log("You clicked!");
+                    const dummy = document.createElement("input"),
+                      text = `https://foodpedia.vercel.app/foodItem/${item.name}`;
+
+                    document.body.appendChild(dummy);
+                    dummy.value = text;
+                    dummy.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(dummy);
+                    handleClick();
                   }}
                   type="button"
                   buttonStyle="btn--primary--solid"
