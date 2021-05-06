@@ -99,7 +99,7 @@ export default function RecipeReviewCard(props) {
 
   const onAddItem = (item) => {
     axios
-      .post("http://localhost:8080/addItem", { email, foodItem: item })
+      .post("https://foodpedia2.herokuapp.com/addItem", { email, foodItem: item })
       .then((response) => {
         console.log(response);
         handleClick();

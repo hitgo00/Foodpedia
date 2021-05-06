@@ -43,7 +43,7 @@ const Header = function Header() {
           {!isAuthenticated && (
             <GoogleLogin
               className="login"
-              clientId="638324418102-ph6j8qqubi8tpl1l8drhfb9mqrrrvd8k.apps.googleusercontent.com"
+              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
             />

@@ -1,5 +1,5 @@
 import ProfileCard from "../components/ProfileCard";
-import FoodItemCard from '../components/card';
+import FoodItemCard from "../components/card";
 import { useUserState } from "../Context/UserContext";
 import React from "react";
 import axios from "axios";
@@ -9,9 +9,10 @@ export default function ProfilePage() {
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
-    axios
-      .post("http://localhost:8080/getItems", { email })
-      .then((response) => setData(response.data.data));
+    axios.post("https://foodpedia2.herokuapp.com/getItems", { email }).then((response) => {
+      const reversedArr = response.data.data.reverse();
+      setData(reversedArr);
+    });
   }, [email]);
 
   return (
@@ -25,7 +26,7 @@ export default function ProfilePage() {
       }}
     >
       <ProfileCard itemsCount={data.length} />
-      {data.length && <FoodItemCard data={data}/>}
+      {data.length && <FoodItemCard data={data} />}
     </div>
   );
 }
