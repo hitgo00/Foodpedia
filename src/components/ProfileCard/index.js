@@ -50,7 +50,7 @@ const useStyles = makeStyles(({ palette }) => ({
   },
 }));
 
-export const ProfileCard = React.memo(function ProfileCard() {
+export const ProfileCard = React.memo(function ProfileCard(props) {
   const { name, email, picture } = useUserState();
   const styles = useStyles();
   const shadowStyles = useFadedShadowStyles();
@@ -65,13 +65,18 @@ export const ProfileCard = React.memo(function ProfileCard() {
         <h3 className={styles.heading}>{name}</h3>
         <span className={styles.subheader}>{email}</span>
       </CardContent>
-      <Divider light />
-      <Box display={"flex"}>
-        <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
-          <p className={styles.statLabel}>Food items</p>
-          <p className={styles.statValue}>6941</p>
-        </Box>
-      </Box>
+
+      {props.itemsCount && (
+        <>
+          <Divider light />
+          <Box display={"flex"}>
+            <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
+              <p className={styles.statLabel}>Food items</p>
+              <p className={styles.statValue}>{props.itemsCount}</p>
+            </Box>
+          </Box>
+        </>
+      )}
     </Card>
   );
 });

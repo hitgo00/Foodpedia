@@ -61,6 +61,7 @@ async function loginUser(dispatch, history, response) {
   localStorage.setItem("name", response.profileObj.name);
   localStorage.setItem("email", response.profileObj.email);
   localStorage.setItem("picture", response.profileObj.imageUrl);
+  navigate("/profile");
   dispatch({ type: "LOGIN_SUCCESS" });
 }
 

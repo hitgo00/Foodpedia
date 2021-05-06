@@ -74,9 +74,6 @@ function App() {
 
           // this.setState({ selfile: this.state.selfile, fin: fin1 });
           setFin(fin1);
-          if (fin1.length > 0) {
-            document.getElementById("ask").style.display = "none";
-          }
         }
       }
     );
@@ -128,10 +125,10 @@ function App() {
       .catch((error) => {
         if (error.response.status === 400) {
           alert("File should be in jpg or jpeg format");
-          window.location.reload();
+          setStr("");
         } else if (error.response.status === 413) {
           alert("File size is greater than 1 MB");
-          window.location.reload();
+          setStr("");
         }
       });
   }, 400);

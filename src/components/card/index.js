@@ -14,6 +14,9 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import "./card.css";
 
+import axios from "axios";
+import { useUserState } from "../../Context/UserContext";
+
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -70,6 +73,12 @@ export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
+  const [snackbarText, setSnackbarText] = React.useState(
+    "Share URL copied to clipboard!"
+  );
+
+  const { email } = useUserState();
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -88,20 +97,29 @@ export default function RecipeReviewCard(props) {
     setOpen(false);
   };
 
+  const onAddItem = (item) => {
+    axios
+      .post("http://localhost:8080/addItem", { email, foodItem: item })
+      .then((response) => {
+        console.log(response);
+        handleClick();
+      });
+  };
+
   return (
     <div className="card-container">
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="info">
-          Share url copied to clipboard!
+          {snackbarText}
         </Alert>
       </Snackbar>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.media}
-          image="https://res.cloudinary.com/dt7hy0a3q/image/upload/v1620291345/healthy-food-illustration1_j5ieky.jpg"
-        />
-        {props.data.map((item, indx) => {
-          return (
+      {props.data.map((item, indx) => {
+        return (
+          <Card style={{ marginBottom: "1rem" }} className={classes.root}>
+            <CardMedia
+              className={classes.media}
+              image="https://res.cloudinary.com/dt7hy0a3q/image/upload/v1620291345/healthy-food-illustration1_j5ieky.jpg"
+            />
             <CardContent>
               <div className="card-title">
                 <Typography variant="h5">{item.name}</Typography>
@@ -146,7 +164,8 @@ export default function RecipeReviewCard(props) {
                 {props.addItem && (
                   <Button
                     onClick={() => {
-                      console.log("You clicked!");
+                      setSnackbarText("Item successfully added");
+                      onAddItem(item);
                     }}
                     type="button"
                     buttonStyle="btn--primary--solid"
@@ -165,6 +184,7 @@ export default function RecipeReviewCard(props) {
                     dummy.select();
                     document.execCommand("copy");
                     document.body.removeChild(dummy);
+                    setSnackbarText("Share URL copied to clipboard!");
                     handleClick();
                   }}
                   type="button"
@@ -175,72 +195,9 @@ export default function RecipeReviewCard(props) {
                 </Button>
               </div>
             </CardContent>
-          );
-        })}
-        {/* <CardContent>
-          <div className="card-title">
-            <Typography variant="h5">{props.data[0].name}</Typography>
-          </div>
-          <Typography variant="body1" component="p">
-            <div className="card-body">
-              {" "}
-              Paella is a Spanish rice dish originally from Valencia. Paella is
-              one of the best-known dishes in Spanish cuisine. For this reason,
-              many non-Spaniards view it as Spain's national dish, but Spaniards
-              almost unanimously consider it to be a dish from the Valencian
-              region.{" "}
-            </div>
-          </Typography>
-          <CardActions disableSpacing>
-            <Typography variant="body1" component="p">
-              <p>Caloric Density (kcal) : data.cal</p>
-            </Typography>
-            <IconButton
-              className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
-              })}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <Typography variant="body1">
-              <ul>
-                <li>Fat:10.4g</li>
-                <li>Sodium:640mg</li>
-                <li>Carbohydrates:35.7g</li>
-                <li>Fiber:2.5g</li>
-                <li>Protien:12.2g</li>
-              </ul>
-            </Typography>
-          </Collapse>
-          <div className="btn">
-            <Button
-              onClick={() => {
-                console.log("You clicked!");
-              }}
-              type="button"
-              buttonStyle="btn--primary--solid"
-              buttonSize="btn--medium"
-            >
-              Add Item
-            </Button>
-            <Button
-              onClick={() => {
-                console.log("You clicked!");
-              }}
-              type="button"
-              buttonStyle="btn--primary--solid"
-              buttonSize="btn--medium"
-            >
-              Share
-            </Button>
-          </div>
-        </CardContent> */}
-      </Card>
+          </Card>
+        );
+      })}
     </div>
   );
 }
