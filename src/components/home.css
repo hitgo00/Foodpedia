@@ -1,16 +1,16 @@
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-    height:300;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 300;
+}
 
 /*----- Header ---------*/
 .super {
   width: 100%;
   height: 100vh;
-  font-family: 'Lato';
+  font-family: "Lato";
   position: relative;
   background: #fff;
   color: #000;
@@ -23,21 +23,19 @@ li {
   margin: 0;
 }
 
-.social-media,.banner-text a {
+.social-media,
+.banner-text a {
   color: #fff;
   display: inline-block;
   font-size: 16px;
   text-decoration: none;
   font-weight: 500;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 100px;
+  background: #0675d0 !important;
+
 }
 
 .bg {
@@ -50,19 +48,19 @@ header {
 .banner {
   display: flex;
   position: relative;
-  top:140px;
+  top: 140px;
   padding-left: 100px;
   padding-right: 30px;
   align-items: center;
 }
 
-.banner-img img{
+.banner-img img {
   position: absolute;
-  top:11px;
-  right:43px;
+  top: 11px;
+  right: 43px;
   z-index: 2;
-  width:470px;
-  height:470px;
+  width: 470px;
+  height: 470px;
 }
 
 .banner-text h1 {
@@ -73,23 +71,23 @@ header {
 
 .banner-text p {
   line-height: 1.7;
-  width:45vw;
+  width: 45vw;
   font-weight: 500 !important;
 }
 
 .banner-text .btn {
   margin-left: -3px;
   padding: 12px 40px;
-  background-color: #FFB633;
+  background-color: #0675d0;
   display: inline-block;
   border-radius: 50px;
   font-size: 20px;
   margin-top: 20px;
 }
-.banner-text .login{
+.banner-text .login {
   font-size: 18px !important;
   border-radius: 50px !important;
-  padding-left:5px !important;
+  padding-left: 5px !important;
   padding-right: 4px !important;
 }
 
@@ -113,139 +111,139 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border:1px solid black;
-  height:50px;
-  width:50px;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   color: #000;
 }
 
-.social-media ul li a .icon{
+.social-media ul li a .icon {
   font-size: 20px;
-  padding-right:10px;
-  padding-left:10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-.social-media ul li a:hover{
+.social-media ul li a:hover {
   font-size: 24px;
-  background-color:#FFB633;
+  background-color: #0675d0;
   color: #fff;
-  border:none;
+  border: none;
 }
 
-  /* --------- Products ---------  */
-  
-#products{
+/* --------- Products ---------  */
+
+#products {
   text-align: center;
   font-size: 26px;
-  font-family: 'Courier New';
+  font-family: "Courier New";
   margin-top: 12rem;
   margin-bottom: 5rem;
 }
 
-#products p{
-  margin-bottom:5rem;
+#products p {
+  margin-bottom: 5rem;
 }
 
 /* -------- About ------- */
 
-#about{
-/* background-color:lightgoldenrodyellow; */
-margin-top:10px ;
-width:100%;
-box-sizing: border-box;
-display: flex;
-padding: 50px 5% 0px 5%;
-align-items: center;
-justify-content: space-between;
-position: relative;
+#about {
+  /* background-color:lightgoldenrodyellow; */
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 50px 5% 0px 5%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
-.about-text{
-  display:flex;
+.about-text {
+  display: flex;
   align-items: center;
-  position:relative;
-  top:-60px;
+  position: relative;
+  top: -60px;
   width: 45%;
   color: #fff;
   text-align: left;
 }
-.about-text h1{
-font-size: 3.5rem;
-font-family:sans-serif;
-color:#82498C;
-text-align: center;
-font-weight: 800;
-position:absolute;
-top:-200px;
-z-index: -1;
-left:200px;
+.about-text h1 {
+  font-size: 3.5rem;
+  font-family: sans-serif;
+  color: #82498c;
+  text-align: center;
+  font-weight: 800;
+  position: absolute;
+  top: -200px;
+  z-index: -1;
+  left: 200px;
 }
 
-.about-text .about2 img{
+.about-text .about2 img {
   position: absolute;
-  top:-200px;
-  left:-100px;
-  width:600px;
-  height:600px;
+  top: -200px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
   opacity: 0.25;
 }
 
-.about-text p{
+.about-text p {
   position: absolute;
-  top:-20px;
-  left:40px;
+  top: -20px;
+  left: 40px;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: normal;
   color: black;
 }
 
-.about-image{
+.about-image {
   z-index: -1;
   margin-right: 0;
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
   width: 45%;
 }
-.about-image img{
-margin-left:5rem;
-margin-bottom:2rem;
-align-items: flex-end;
-width: 500px;
+.about-image img {
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+  align-items: flex-end;
+  width: 500px;
 }
 
 /* -------- Contact ------- */
-#contact{
+#contact {
   margin-top: 120px;
   background-image: url(../images/footer.png);
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#contact h1{
-      font-size: 3.5rem;
-      color:#3d2514;
-      font-weight: 800;
-      margin: 0px;
-      padding: 0px;
-      margin-bottom: 80px;
+#contact h1 {
+  font-size: 3.5rem;
+  color: #3d2514;
+  font-weight: 800;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 80px;
 }
-#contact form{
-  width:600px;
-  display:flex;
+#contact form {
+  width: 600px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 }
 #contact form input,
-#contact form textarea{
-  width:100%;
-  height:50px;
-  margin:5px 0px;
+#contact form textarea {
+  width: 100%;
+  height: 50px;
+  margin: 5px 0px;
   padding: 10px;
   border: none;
   outline: none;
@@ -253,21 +251,20 @@ width: 500px;
   border-radius: 5px;
   resize: none;
 }
-#contact form textarea{
+#contact form textarea {
   font-family: inherit;
   height: 150px;
 }
 
-#contact form input[type="submit"]{
-  width:620px;
+#contact form input[type="submit"] {
+  width: 620px;
   height: 45px;
-  background: linear-gradient(90deg, #bf2222 20%,#bf2222);
+  background: linear-gradient(90deg, #bf2222 20%, #bf2222);
   color: #ffffff;
   text-transform: uppercase;
 }
-@media(max-width:620px){
-  #contact form{
-      width:90%;
+@media (max-width: 620px) {
+  #contact form {
+    width: 90%;
   }
 }
-

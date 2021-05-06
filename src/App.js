@@ -14,7 +14,10 @@ function App() {
     return (
       <div className="App">
         <Navbar />
-        <HomePage />
+        <Router primary={false}>
+          <HomePage path="/" />
+          <SearchPage path="/search" />
+        </Router>
       </div>
     );
   }
