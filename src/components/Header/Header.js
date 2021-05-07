@@ -1,14 +1,15 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { Link } from "@reach/router";
+import index from "../../images/banner.png";
+import bg from "../../images/bg.png";
 import "../home.css";
-import HeroSVG from "../svgs/Hero";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faGithubAlt,
-//   faFacebook,
-//   faTwitter,
-// } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithubAlt,
+  faFacebook,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 import {
   loginUser,
@@ -30,12 +31,10 @@ const Header = function Header() {
         <div className="banner-text">
           <h1>
             {" "}
-            We're always in the <br /> mood for food
+            Eat Good <br />Feel Good.
           </h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi ab
-            minima excepturi sint libero temporibus numquam aspernatur deleniti
-            quia. Voluptas architecto incidunt, quaerat dolorum vel.
+            Track your calories with text search or image search.
           </p>
           <Link to="/search" class="btn">
             Search Food{" "}
@@ -49,13 +48,14 @@ const Header = function Header() {
             />
           )}
         </div>
-        <div>
-          <HeroSVG width={"40rem"} />
+        <div className="banner-img">
+          <img src={index} alt="logo" />
         </div>
       </div>
 
       {/* <div className="social-media">
         <ul>
+        
           <li>
             <a href="#">
               <FontAwesomeIcon width={"24px"} className="icon" icon={faTwitter} />
@@ -71,8 +71,12 @@ const Header = function Header() {
               <FontAwesomeIcon className="icon" icon={faGithubAlt} />
             </a>
           </li>
+         
         </ul>
       </div> */}
+      <div className="bg">
+        <img src={bg} alt="" />
+      </div>
     </div>
   );
 };
