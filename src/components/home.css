@@ -149,11 +149,11 @@ header {
 
 #about {
   /* background-color:lightgoldenrodyellow; */
-  margin-top: 10px;
+  margin-top: 40px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  padding: 50px 5% 0px 5%;
+  padding: 100px 5% 0px 5%;
   align-items: center;
   justify-content: space-between;
   position: relative;

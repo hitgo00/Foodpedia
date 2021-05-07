@@ -27,7 +27,7 @@
   font-size: 70px;
 
   position: absolute;
-  top: 110%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -42,7 +42,7 @@
   font-weight: bold;
   border: 3px solid black;
   position: absolute;
-  top: 160%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -63,7 +63,7 @@
   font-family: cursive;
   position: absolute;
   font-size: larger;
-  top: 300%;
+  top: 200%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -82,7 +82,7 @@
   font-size: 35px;
 
   position: absolute;
-  top: 40%;
+  /* top: 40%; */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;

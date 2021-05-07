@@ -142,14 +142,14 @@ function App() {
       {fin.length > 0 ? (
         <RecipeReviewCard addItem={isAuthenticated} data={fin} />
       ) : (
-        <div class="first" id="ask">
-          <div class="div1"></div>
+        <div >
+          {/* <div class="div1"></div>
 
           <div class="box1">
             "Nutrition is the only remedy that can bring full recovery and can
             be used with any treatment. Remember, food is our best medicine!"
           </div>
-          <div class="box2">- Bernard Jensen</div>
+          <div class="box2">- Bernard Jensen</div> */}
           <div class="box">Know your food's nutritional values</div>
 
           <div class="bg-text">

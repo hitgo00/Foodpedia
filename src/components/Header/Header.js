@@ -33,9 +33,7 @@ const Header = function Header() {
             We're always in the <br /> mood for food
           </h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi ab
-            minima excepturi sint libero temporibus numquam aspernatur deleniti
-            quia. Voluptas architecto incidunt, quaerat dolorum vel.
+          Track your calories with our poweful text search and image search and stay fit!
           </p>
           <Link to="/search" class="btn">
             Search Food{" "}
