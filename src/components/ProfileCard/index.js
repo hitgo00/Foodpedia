@@ -58,6 +58,8 @@ export const ProfileCard = React.memo(function ProfileCard(props) {
     borderColor: "rgba(0, 0, 0, 0.08)",
     height: "50%",
   });
+
+  console.log(props.itemsCount);
   return (
     <Card className={cx(styles.card, shadowStyles.root)}>
       <CardContent>
@@ -66,7 +68,7 @@ export const ProfileCard = React.memo(function ProfileCard(props) {
         <span className={styles.subheader}>{email}</span>
       </CardContent>
 
-      {props.itemsCount && (
+      {props.itemsCount ? (
         <>
           <Divider light />
           <Box display={"flex"}>
@@ -76,7 +78,7 @@ export const ProfileCard = React.memo(function ProfileCard(props) {
             </Box>
           </Box>
         </>
-      )}
+      ) : null}
     </Card>
   );
 });

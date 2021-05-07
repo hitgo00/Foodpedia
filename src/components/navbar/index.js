@@ -19,21 +19,6 @@ import {
 } from "../../Context/UserContext";
 import { Button } from "@material-ui/core";
 
-const pages = [
-  {
-    label: "Search Page",
-    link: "/search",
-  },
-  {
-    label: "Home Page",
-    link: "/",
-  },
-  {
-    label: "Profile",
-    link: "/profile",
-  },
-];
-
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
@@ -81,6 +66,7 @@ function Navbar(props) {
               <FastfoodIcon />
             </IconButton>
           </Link>
+          
           <Typography variant="h5" className={classes.title}>
             Foodpedia
           </Typography>

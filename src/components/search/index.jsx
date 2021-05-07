@@ -100,7 +100,7 @@ function App() {
       })
       .then((res) => {
         const filteredArray = res.data.recognition_results.filter((item) => {
-          return item.prob >= 0.1;
+          return item.prob >= 0.2;
         });
 
         let i;
@@ -110,7 +110,11 @@ function App() {
         }
 
         var s;
-        if (arr.length === 1) {
+        if (!arr.length) {
+          elem.innerHTML = "Upload!";
+          setSelfile(null);
+          alert("No food item found in uplodaed image");
+        } else if (arr.length === 1) {
           text_search(arr[0]);
         } else {
           s = arr[0];
@@ -157,6 +161,7 @@ function App() {
             <br />
             <input
               type="file"
+              accept="image/jpeg"
               onChange={(e) => setSelfile(e.target.files[0])}
             />
             <button
